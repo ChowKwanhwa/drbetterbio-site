@@ -1,0 +1,14 @@
+[
+  { "id": "vitamin-c-15", "name": "Vitamin C 15 Radiance Serum", "category": "Serums", "price": 68, "badge": "Best Seller", "desc": "15% L-ascorbic acid with vitamin E and ferulic acid.", "image": "assets/img/01-vitamin-c.webp" },
+  { "id": "peptide-firming", "name": "Peptide Firming Serum", "category": "Serums", "price": 74, "badge": null, "desc": "Six-peptide complex for bounce and definition.", "image": "assets/img/02-peptide.webp" },
+  { "id": "hydra-essence", "name": "Hyaluronic Hydra Essence", "category": "Serums", "price": 52, "badge": null, "desc": "Multi-weight hyaluronic acid for deep hydration.", "image": "assets/img/03-hydra.webp" },
+  { "id": "retinal-night", "name": "Retinal Night Renewal", "category": "Treatments", "price": 78, "badge": "Best Seller", "desc": "Encapsulated 0.1% retinal for smoother texture.", "image": "assets/img/04-retinal.webp" },
+  { "id": "peptide-eye", "name": "Multi-Peptide Eye Cream", "category": "Treatments", "price": 58, "badge": null, "desc": "Caffeine and peptides for a rested-looking eye area.", "image": "assets/img/05-eye.webp" },
+  { "id": "overnight-mask", "name": "Overnight Repair Mask", "category": "Treatments", "price": 64, "badge": "New", "desc": "Squalane and panthenol to recover overnight.", "image": "assets/img/06-mask.webp" },
+  { "id": "niacinamide-tone", "name": "Niacinamide Tone Corrector", "category": "Brightening", "price": 56, "badge": null, "desc": "10% niacinamide with tranexamic acid.", "image": "assets/img/07-niacinamide.webp" },
+  { "id": "clarifying-gel", "name": "Dark Spot Clarifying Gel", "category": "Brightening", "price": 48, "badge": null, "desc": "Azelaic acid gel for post-blemish marks.", "image": "assets/img/08-clarifying.webp" },
+  { "id": "toner-pads", "name": "Brightening Toner Pads", "category": "Brightening", "price": 42, "badge": null, "desc": "Gentle PHA pads, 60 per tub.", "image": "assets/img/09-pads.webp" },
+  { "id": "amino-cleanser", "name": "Gentle Amino Cleanser", "category": "Daily Care", "price": 32, "badge": null, "desc": "Low-foam, pH-balanced daily cleanse.", "image": "assets/img/10-cleanser.webp" },
+  { "id": "ceramide-moisturizer", "name": "Barrier Ceramide Moisturizer", "category": "Daily Care", "price": 54, "badge": "Best Seller", "desc": "Ceramides, cholesterol and fatty acids in a 3:1:1 ratio.", "image": "assets/img/11-ceramide.webp" },
+  { "id": "mineral-spf50", "name": "Mineral Daily Shield SPF 50", "category": "Daily Care", "price": 44, "badge": null, "desc": "Sheer zinc oxide with no white cast.", "image": "assets/img/12-spf.webp" }
+]

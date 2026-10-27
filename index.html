@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Skin Collection | drbetterbio</title>
-  <meta name="description" content="drbetterbio Skin: science-led serums, treatments and daily care for visibly healthier skin.">
-  <meta property="og:title" content="Skin Collection | drbetterbio">
-  <meta property="og:description" content="Science-led serums, treatments and daily care for visibly healthier skin.">
+  <title>Skincare Collection | Dr.BetterBio</title>
+  <meta name="description" content="Dr.BetterBio is Hong Kong-born skincare with an international outlook — sheet masks, eye patches, peel-off masks and more, crafted with care in every detail.">
+  <meta property="og:title" content="Skincare Collection | Dr.BetterBio">
+  <meta property="og:description" content="Hong Kong-born skincare. Quality in every detail, modern beauty for everyday rituals.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/01-facial-sheet-mask-detail.webp">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -15,11 +16,9 @@
 
   <div class="utility-bar">
     <div class="utility-bar__inner">
-      <a href="#contact">Contact</a>
+      <a href="#story">Our Story</a>
       <span class="utility-bar__sep" aria-hidden="true"></span>
-      <a href="#stores" aria-label="Store locator">
-        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-      </a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 
@@ -33,45 +32,53 @@
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.6"/></svg>
         </button>
       </div>
-      <a class="wordmark" href="#top" aria-label="drbetterbio home">dr<span>better</span>bio</a>
+      <a class="wordmark" href="#top" aria-label="Dr.BetterBio home">Dr.<span>Better</span>Bio</a>
       <div class="site-header__right">
-        <button class="region" type="button">United States
-          <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="2.4" fill="none"/></svg>
-        </button>
+        <span class="region">English · USD</span>
         <button class="icon-btn" type="button" aria-label="Account">
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
         </button>
-        <button class="icon-btn cart-btn" type="button" aria-label="Cart">
+        <button class="icon-btn cart-btn" type="button" aria-label="Bag">
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M9 9a3 3 0 0 0 6 0" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
           <span class="cart-count" data-cart-count hidden>0</span>
         </button>
       </div>
     </div>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-      <a href="#" class="is-strong">Best Sellers</a>
-      <a href="#">Lash</a>
-      <a href="#">Brow</a>
-      <a href="#">Hair</a>
-      <a href="#" aria-current="page">Skin</a>
-      <a href="#">Wellness</a>
-      <a href="#">Sets &amp; Bundles</a>
-      <a href="#routine" class="is-accent">Find Your Routine</a>
-      <a href="#">Journal</a>
-      <a href="#">Our Story</a>
+      <a href="#main" class="is-strong" data-nav-category="All" aria-current="page">Shop All</a>
+      <a href="#main" data-nav-category="Masks">Masks</a>
+      <a href="#main" data-nav-category="Eye Care">Eye Care</a>
+      <a href="#main" data-nav-category="Moisturizers">Moisturizers</a>
+      <a href="#main" data-nav-category="Cleansers">Cleansers</a>
+      <a href="#main" data-nav-category="Serums">Serums</a>
+      <a href="#story" class="is-accent">Our Story</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
   <div class="promo-bar" role="note">
-    Free U.S. shipping on orders $75+ · Worldwide delivery · Dermatologist-tested formulas
+    Hong Kong-born skincare · Face Cream, Gentle Facial Cleanser &amp; Facial Serum — coming soon
   </div>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <img src="assets/img/01-facial-sheet-mask-detail.webp" alt="Dr.BetterBio Facial Sheet Mask box and sachets on marble" width="900" height="900">
+    </div>
+    <div class="hero__copy">
+      <p class="eyebrow">Dr.BetterBio · Hong Kong</p>
+      <h1 id="hero-title">Quality in every detail.</h1>
+      <p>Modern beauty, made for everyday rituals. Discover our signature masks and eye care, wrapped in sapphire and champagne gold.</p>
+      <a class="btn btn--navy" href="#main">Shop the collection</a>
+    </div>
+  </section>
 
   <section class="routine-cta" id="routine">
     <div class="routine-cta__inner">
       <div>
         <p class="eyebrow">Not sure where to start?</p>
-        <p class="routine-cta__text">Tell us your skin type and main concern — we’ll build a three-step routine for you.</p>
+        <p class="routine-cta__text">Try the mask ritual — Facial Sheet Mask, Eye Patches and Hydrating Peel-Off Mask.</p>
       </div>
-      <a class="btn btn--navy" href="#faq">Build my routine</a>
+      <a class="btn btn--navy" href="#main" data-nav-category="Masks">Shop masks</a>
     </div>
   </section>
 
@@ -94,7 +101,7 @@
         <button type="button" data-density="2" aria-label="Large tiles">
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
         </button>
-        <button type="button" data-density="4" class="is-active" aria-label="Small tiles">
+        <button type="button" data-density="3" class="is-active" aria-label="Small tiles">
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="3.5" height="3.5"/><rect x="6.25" y="1" width="3.5" height="3.5"/><rect x="11.5" y="1" width="3.5" height="3.5"/><rect x="1" y="6.25" width="3.5" height="3.5"/><rect x="6.25" y="6.25" width="3.5" height="3.5"/><rect x="11.5" y="6.25" width="3.5" height="3.5"/><rect x="1" y="11.5" width="3.5" height="3.5"/><rect x="6.25" y="11.5" width="3.5" height="3.5"/><rect x="11.5" y="11.5" width="3.5" height="3.5"/></svg>
         </button>
       </div>
@@ -107,91 +114,105 @@
       </fieldset>
     </div>
 
-    <section class="product-grid" data-grid data-density="4" aria-label="Products">
+    <section class="product-grid" data-grid data-density="3" aria-label="Products">
       <p class="grid-status">Loading products…</p>
     </section>
 
     <section class="collection-info" aria-labelledby="collection-title">
       <div class="intro-box">
-        <h1 id="collection-title">drbetterbio Skin</h1>
-        <p class="intro-box__sub">Science-led skincare for skin that looks rested, even and resilient.</p>
-        <p>Every formula starts from a single question: what does skin actually need to function well? We pair proven actives — vitamin C, peptides, retinal and niacinamide — with barrier-friendly bases, at concentrations chosen for results you can see without the irritation you can feel.</p>
+        <h2 id="collection-title">Dr.BetterBio Skincare</h2>
+        <p class="intro-box__sub">Hong Kong-born skincare with an international outlook.</p>
+        <p>We explore the many ways people care for their skin, and answer with products made with attention to quality and detail — bringing modern aesthetics into everyday care for a refined, joyful experience for your skin and your day.</p>
       </div>
 
       <div class="category-cards">
         <article class="category-card">
-          <h2>Antioxidant Defense</h2>
-          <p>Vitamin C 15 Radiance Serum — daily brightness and protection against environmental stress.</p>
+          <h3>Mask Rituals</h3>
+          <p>Facial Sheet Mask and Hydrating Peel-Off Mask — two ways to pause, treat and refresh.</p>
         </article>
         <article class="category-card">
-          <h2>Renew &amp; Firm</h2>
-          <p>Peptide and retinal treatments that target texture, fine lines and loss of bounce.</p>
+          <h3>Eye Care</h3>
+          <p>Golden Eye Patches for a quick under-eye refresh, 40 patches per jar.</p>
         </article>
         <article class="category-card">
-          <h2>Even Tone</h2>
-          <p>Niacinamide and gentle acids to fade the look of dark spots and post-blemish marks.</p>
+          <h3>Daily Essentials</h3>
+          <p>Face Cream, Gentle Facial Cleanser and Facial Serum — arriving soon to complete the routine.</p>
         </article>
         <article class="category-card">
-          <h2>Daily Foundation</h2>
-          <p>Low-foam cleansing, ceramide moisture and mineral SPF — the basics, done properly.</p>
+          <h3>Signature Design</h3>
+          <p>Sapphire blue and champagne gold, finished with care down to the smallest line.</p>
         </article>
       </div>
 
       <div class="faq" id="faq">
         <h2>Frequently Asked Questions</h2>
         <details>
-          <summary>How do I build a routine with drbetterbio Skin?</summary>
-          <p>Start simple: cleanser, one targeted serum, moisturizer and SPF in the morning. In the evening, swap SPF for a treatment such as Retinal Night Renewal. Add one new product at a time, two weeks apart.</p>
+          <summary>Which products are available now?</summary>
+          <p>Facial Sheet Mask, Eye Patches and Hydrating Peel-Off Mask are available to order today. Face Cream, Gentle Facial Cleanser and Facial Serum are coming soon.</p>
         </details>
         <details>
-          <summary>Can I use vitamin C and retinal together?</summary>
-          <p>Yes — just at different times. Vitamin C works best in the morning under sunscreen; retinal belongs in your evening routine.</p>
+          <summary>How do I use the Facial Sheet Mask?</summary>
+          <p>After cleansing, unfold the sheet and smooth it over your face. Relax for 10–15 minutes, remove, then gently pat any remaining essence into your skin.</p>
         </details>
         <details>
-          <summary>Are the formulas suitable for sensitive skin?</summary>
-          <p>All formulas are fragrance-free and dermatologist-tested. If your skin is reactive, patch-test first and introduce actives gradually.</p>
+          <summary>How do I use the Hydrating Peel-Off Mask?</summary>
+          <p>Apply an even layer to clean, dry skin with a mask brush, avoiding the eyes, brows and lips. Once it has set, peel it away from the edges and rinse off any residue.</p>
         </details>
         <details>
-          <summary>How does Subscribe &amp; Save work?</summary>
-          <p>Choose a delivery interval at checkout and save 10% on every order. Skip, change or cancel any time from your account.</p>
+          <summary>How do I use the Eye Patches?</summary>
+          <p>Place one patch under each eye on clean skin, leave on for 15–20 minutes, then remove. Ideal in the morning or before an evening out.</p>
         </details>
         <details>
-          <summary>When will I see results?</summary>
-          <p>Hydration is immediate. Tone and texture changes are usually visible within 4–8 weeks of consistent use.</p>
+          <summary>When will the new products launch?</summary>
+          <p>Face Cream, Gentle Facial Cleanser and Facial Serum are on their way. Sign up to our newsletter below to be the first to know.</p>
+        </details>
+        <details>
+          <summary>Are the products suitable for sensitive skin?</summary>
+          <p>Please check the full ingredient list on each pack and patch-test any new product on a small area first, especially if your skin is reactive.</p>
         </details>
       </div>
 
       <div class="trust-box">
-        <p><strong>Formulated with intent:</strong> active levels are set by efficacy and tolerance, not by trend.</p>
-        <p><strong>Built as a system:</strong> defend (antioxidants) + renew (peptides, retinal) + even (niacinamide) + protect (barrier care and SPF).</p>
-        <p><strong>Kind by default:</strong> fragrance-free, cruelty-free, and packaged to protect light- and air-sensitive ingredients.</p>
+        <p><strong>Born in Hong Kong:</strong> a skincare brand shaped by a city that sits between East and West.</p>
+        <p><strong>Quality in every detail:</strong> from formula to finish, every product is made with care.</p>
+        <p><strong>Modern beauty, everyday rituals:</strong> design that makes daily care feel refined and joyful.</p>
       </div>
+    </section>
 
-      <p class="note">Made in <strong>GMP-certified facilities</strong>. Shipping worldwide.</p>
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story__media">
+        <img src="assets/img/04-face-cream-detail.webp" alt="Dr.BetterBio Face Cream jar and box in a marble colonnade" width="900" height="900" loading="lazy" decoding="async">
+      </div>
+      <div class="story__copy">
+        <p class="eyebrow">Our Story</p>
+        <h2 id="story-title">From Hong Kong, with an international outlook</h2>
+        <p>Dr.BetterBio was founded in Hong Kong as a beauty and skincare brand that looks outward — exploring the diverse needs of skin around the world.</p>
+        <p>We believe care is in the details. That is why we focus on product quality and finish, and why we bring modern aesthetics into everyday rituals: so that looking after your skin feels refined, and a little joyful, every single day.</p>
+      </div>
     </section>
 
     <section class="reviews" aria-labelledby="reviews-title">
-      <h2 id="reviews-title">Real Routines, Real Reviews</h2>
+      <h2 id="reviews-title">Loved in Everyday Rituals</h2>
       <div class="reviews__track">
         <figure class="review">
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>My skin looks brighter after a month of the vitamin C serum, and it never stings.</blockquote>
-          <figcaption>Hannah R.</figcaption>
+          <blockquote>The sheet mask is so generously soaked — my skin looks fresh and dewy afterwards.</blockquote>
+          <figcaption>Facial Sheet Mask</figcaption>
         </figure>
         <figure class="review">
           <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>The retinal is the first one I can use nightly without peeling. Texture is noticeably smoother.</blockquote>
-          <figcaption>Marcus T.</figcaption>
+          <blockquote>My five-minute morning reset. The golden patches feel cooling and stay put.</blockquote>
+          <figcaption>Eye Patches</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Peeling it off is oddly satisfying, and my skin feels soft and smooth after.</blockquote>
+          <figcaption>Hydrating Peel-Off Mask</figcaption>
         </figure>
         <figure class="review">
           <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
-          <blockquote>The SPF sits nicely under makeup with no white cast. Already on my second tube.</blockquote>
-          <figcaption>Priya S.</figcaption>
-        </figure>
-        <figure class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>The ceramide moisturizer rescued my barrier over the winter. Rich, but never greasy.</blockquote>
-          <figcaption>Elena V.</figcaption>
+          <blockquote>The packaging is beautiful — it looks lovely on my vanity and makes a great gift.</blockquote>
+          <figcaption>Facial Sheet Mask</figcaption>
         </figure>
       </div>
     </section>
@@ -200,10 +221,10 @@
   <footer class="site-footer" id="contact">
     <div class="site-footer__top">
       <div class="footer-brand">
-        <a class="wordmark wordmark--light" href="#top">dr<span>better</span>bio</a>
-        <p>Science-led care for skin, lash, brow and hair.</p>
+        <a class="wordmark wordmark--light" href="#top">Dr.<span>Better</span>Bio</a>
+        <p>Hong Kong-born skincare. Quality in every detail.</p>
         <form class="newsletter" data-newsletter novalidate>
-          <label for="nl-email">Get 10% off your first order</label>
+          <label for="nl-email">Be the first to know about new launches</label>
           <div class="newsletter__row">
             <input id="nl-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
             <button class="btn btn--gold" type="submit">Sign up</button>
@@ -213,11 +234,11 @@
       </div>
       <nav class="footer-col" aria-label="Shop">
         <h3>Shop</h3>
-        <a href="#">Best Sellers</a><a href="#">Skin</a><a href="#">Lash &amp; Brow</a><a href="#">Hair</a><a href="#">Sets &amp; Bundles</a>
+        <a href="#main" data-nav-category="All">Shop All</a><a href="#main" data-nav-category="Masks">Masks</a><a href="#main" data-nav-category="Eye Care">Eye Care</a>
       </nav>
       <nav class="footer-col" aria-label="About">
         <h3>About</h3>
-        <a href="#">Our Story</a><a href="#">Journal</a><a href="#">Ingredients</a><a href="#" id="stores">Store Locator</a>
+        <a href="#story">Our Story</a><a href="#faq">FAQ</a>
       </nav>
       <nav class="footer-col" aria-label="Help">
         <h3>Help</h3>
@@ -225,10 +246,8 @@
       </nav>
     </div>
     <div class="site-footer__bottom">
-      <ul class="payments" aria-label="Accepted payments">
-        <li>Visa</li><li>Mastercard</li><li>Amex</li><li>PayPal</li><li>Apple Pay</li><li>Google Pay</li>
-      </ul>
-      <p class="legal">© <span data-year></span> drbetterbio. All rights reserved.</p>
+      <p class="legal">© <span data-year></span> Dr.BetterBio. All rights reserved.</p>
+      <p class="legal">Hong Kong</p>
     </div>
   </footer>
 

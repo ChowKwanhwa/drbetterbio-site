@@ -2,7 +2,6 @@
   'use strict';
 
   const DATA_URL = 'assets/data/products.json';
-  const SUBSCRIBE_DISCOUNT = 0.1;
   const ALL = 'All';
   const TOAST_MS = 2400;
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -20,15 +19,22 @@
   const state = { products: [], sort: 'featured', category: ALL, cart: 0 };
 
   const money = (n) => `$${n.toFixed(2)}`;
+  const isAvailable = (p) => p.status === 'available' && typeof p.price === 'number';
 
   const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[c]));
 
+  // Products without a price (coming soon) always sort after purchasable ones.
+  const byPrice = (dir) => (a, b) => {
+    if (isAvailable(a) !== isAvailable(b)) return isAvailable(a) ? -1 : 1;
+    return isAvailable(a) ? dir * (a.price - b.price) : 0;
+  };
+
   const SORTERS = {
     featured: () => 0,
-    'price-asc': (a, b) => a.price - b.price,
-    'price-desc': (a, b) => b.price - a.price,
+    'price-asc': byPrice(1),
+    'price-desc': byPrice(-1),
     name: (a, b) => a.name.localeCompare(b.name)
   };
 
@@ -39,19 +45,33 @@
 
   function cardHtml(p) {
     const name = escapeHtml(p.name);
-    const sub = money(p.price * (1 - SUBSCRIBE_DISCOUNT));
-    const badge = p.badge ? `<span class="badge">${escapeHtml(p.badge)}</span>` : '';
+    const id = escapeHtml(p.id);
+    const available = isAvailable(p);
+    const badge = p.badge
+      ? `<span class="badge${available ? '' : ' badge--soon'}">${escapeHtml(p.badge)}</span>`
+      : '';
+    const detail = p.imageDetail
+      ? `<img class="product-card__alt" src="${escapeHtml(p.imageDetail)}" alt="" width="900" height="900" loading="lazy" decoding="async">`
+      : '';
+    const price = available
+      ? `<p class="product-card__price">${money(p.price)}</p>`
+      : '<p class="product-card__price product-card__price--soon">Arriving soon</p>';
+    const action = available
+      ? `<button class="add-btn" type="button" data-add="${id}">Add to Bag</button>`
+      : '<button class="add-btn" type="button" disabled>Coming Soon</button>';
     return `
-      <article class="product-card">
-        <a class="product-card__media" href="#${escapeHtml(p.id)}" aria-label="${name}">
+      <article class="product-card${available ? '' : ' is-soon'}" id="${id}">
+        <a class="product-card__media" href="#${id}" aria-label="${name}">
           <img src="${escapeHtml(p.image)}" alt="${name}" width="900" height="900" loading="lazy" decoding="async">
+          ${detail}
           ${badge}
         </a>
-        <h2 class="product-card__title"><a href="#${escapeHtml(p.id)}">${name}</a></h2>
+        <p class="product-card__no">No. ${escapeHtml(p.no)}</p>
+        <h2 class="product-card__title"><a href="#${id}">${name}</a></h2>
+        <p class="product-card__size">${escapeHtml(p.size)}</p>
         <p class="product-card__desc">${escapeHtml(p.desc)}</p>
-        <p class="product-card__price">${money(p.price)}</p>
-        <button class="subscribe-btn" type="button" data-add="${escapeHtml(p.id)}">Subscribe &amp; Save · ${sub}</button>
-        <a class="learn-more" href="#${escapeHtml(p.id)}">Learn more →</a>
+        ${price}
+        ${action}
       </article>`;
   }
 
@@ -70,6 +90,17 @@
     ).join('');
   }
 
+  function setCategory(category) {
+    state.category = category;
+    $$('[data-category]', filterRow).forEach((c) =>
+      c.setAttribute('aria-pressed', String(c.dataset.category === state.category)));
+    $$('[data-nav-category]').forEach((link) => {
+      if (link.dataset.navCategory === state.category) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+    render();
+  }
+
   let toastTimer;
   function showToast(message) {
     toastEl.textContent = message;
@@ -80,7 +111,7 @@
 
   function addToCart(id, button) {
     const product = state.products.find((p) => p.id === id);
-    if (!product) return;
+    if (!product || !isAvailable(product)) return;
     state.cart += 1;
     cartCountEl.textContent = String(state.cart);
     cartCountEl.hidden = false;
@@ -102,11 +133,15 @@
 
     filterRow.addEventListener('click', (e) => {
       const chip = e.target.closest('[data-category]');
-      if (!chip) return;
-      state.category = chip.dataset.category;
-      $$('[data-category]', filterRow).forEach((c) =>
-        c.setAttribute('aria-pressed', String(c.dataset.category === state.category)));
-      render();
+      if (chip) setCategory(chip.dataset.category);
+    });
+
+    $$('[data-nav-category]').forEach((link) => {
+      link.addEventListener('click', () => {
+        setCategory(link.dataset.navCategory);
+        $('#primary-nav').classList.remove('is-open');
+        $('.menu-toggle').setAttribute('aria-expanded', 'false');
+      });
     });
 
     const refineBtn = $('[data-refine-toggle]');

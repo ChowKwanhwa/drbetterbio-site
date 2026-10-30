@@ -12,70 +12,81 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <div class="utility-bar">
     <div class="utility-bar__inner">
-      <a href="#story">Our Story</a>
+      <a href="#story" data-i18n="nav.story">Our Story</a>
       <span class="utility-bar__sep" aria-hidden="true"></span>
-      <a href="#contact">Contact</a>
+      <a href="#contact" data-i18n="util.contact">Contact</a>
+      <span class="utility-bar__sep" aria-hidden="true"></span>
+      <div class="lang-switch" data-lang-switch>
+        <button class="lang-switch__btn" type="button" data-lang-toggle aria-expanded="false" aria-controls="lang-menu" aria-label="Language">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          <span data-lang-current>EN</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+        </button>
+        <ul class="lang-switch__menu" id="lang-menu" data-lang-menu hidden>
+          <li><button type="button" data-lang="en" lang="en">English</button></li>
+          <li><button type="button" data-lang="zh-Hant" lang="zh-Hant">繁體中文</button></li>
+          <li><button type="button" data-lang="vi" lang="vi">Tiếng Việt</button></li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <header class="site-header" id="top">
     <div class="site-header__bar">
       <div class="site-header__left">
-        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" data-i18n-attr="aria-label:aria.menu" aria-expanded="false" aria-controls="primary-nav">
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
         </button>
-        <button class="icon-btn" type="button" aria-label="Search">
+        <button class="icon-btn" type="button" aria-label="Search" data-i18n-attr="aria-label:aria.search">
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.6"/></svg>
         </button>
       </div>
-      <a class="wordmark" href="#top" aria-label="YANIAER home">YANIAER</a>
+      <a class="wordmark" href="#top" aria-label="YANIAER home" data-i18n-attr="aria-label:aria.home">YANIAER</a>
       <div class="site-header__right">
-        <span class="region">English · USD</span>
-        <button class="icon-btn" type="button" aria-label="Account">
+        <span class="region">USD</span>
+        <button class="icon-btn" type="button" aria-label="Account" data-i18n-attr="aria-label:aria.account">
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
         </button>
-        <button class="icon-btn cart-btn" type="button" aria-label="Bag">
+        <button class="icon-btn cart-btn" type="button" aria-label="Bag" data-i18n-attr="aria-label:aria.bag">
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M9 9a3 3 0 0 0 6 0" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
           <span class="cart-count" data-cart-count hidden>0</span>
         </button>
       </div>
     </div>
-    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-      <a href="#main" class="is-strong" data-nav-category="All" aria-current="page">Shop All</a>
-      <a href="#main" data-nav-category="Masks">Masks</a>
-      <a href="#main" data-nav-category="Eye Care">Eye Care</a>
-      <a href="#story" class="is-accent">Our Story</a>
-      <a href="#faq">FAQ</a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-i18n-attr="aria-label:aria.primaryNav">
+      <a href="#main" class="is-strong" data-nav-category="All" aria-current="page" data-i18n="nav.all">Shop All</a>
+      <a href="#main" data-nav-category="Masks" data-i18n="nav.masks">Masks</a>
+      <a href="#main" data-nav-category="Eye Care" data-i18n="nav.eye">Eye Care</a>
+      <a href="#story" class="is-accent" data-i18n="nav.story">Our Story</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
   </header>
 
-  <div class="promo-bar" role="note">
-    Japanese clinic-grade luxury skincare · Crystal-infused. Luxuriously youthful.
-  </div>
+  <div class="promo-bar" role="note" data-i18n="promo">Japanese clinic-grade luxury skincare · Crystal-infused. Luxuriously youthful.</div>
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__media">
-      <img src="assets/img/01-facial-sheet-mask-detail.webp" alt="YANIAER Facial Sheet Mask box, sachets and crystal sheet on marble" width="900" height="900">
+      <img src="assets/img/01-facial-sheet-mask-detail.webp" alt="YANIAER Facial Sheet Mask box, sachets and crystal sheet on marble" data-i18n-attr="alt:hero.alt" width="900" height="900">
     </div>
     <div class="hero__copy">
-      <p class="eyebrow">YANIAER · Clinic-grade luxury</p>
-      <h1 id="hero-title">Crystal-infused. Luxuriously youthful.</h1>
-      <p>The anti-ageing, brightening and clarifying care of the Japanese treatment salon, reimagined for home. Discover our signature masks and eye care, wrapped in sapphire and champagne gold.</p>
-      <a class="btn btn--navy" href="#main">Shop the collection</a>
+      <p class="eyebrow" data-i18n="hero.eyebrow">YANIAER · Clinic-grade luxury</p>
+      <h1 id="hero-title" data-i18n="hero.title">Crystal-infused. Luxuriously youthful.</h1>
+      <p data-i18n="hero.body">The anti-ageing, brightening and clarifying care of the Japanese treatment salon, reimagined for home. Discover our signature masks and eye care, wrapped in sapphire and champagne gold.</p>
+      <a class="btn btn--navy" href="#main" data-i18n="hero.cta">Shop the collection</a>
     </div>
   </section>
 
   <section class="routine-cta" id="routine">
     <div class="routine-cta__inner">
       <div>
-        <p class="eyebrow">Not sure where to start?</p>
-        <p class="routine-cta__text">Try the full ritual — clarify with the Hydrating Peel-Off Mask, then treat with the Facial Sheet Mask and Eye Patches.</p>
+        <p class="eyebrow" data-i18n="routine.eyebrow">Not sure where to start?</p>
+        <p class="routine-cta__text" data-i18n="routine.text">Try the full ritual — clarify with the Hydrating Peel-Off Mask, then treat with the Facial Sheet Mask and Eye Patches.</p>
       </div>
-      <a class="btn btn--navy" href="#main" data-nav-category="Masks">Shop masks</a>
+      <a class="btn btn--navy" href="#main" data-nav-category="Masks" data-i18n="routine.cta">Shop masks</a>
     </div>
   </section>
 
@@ -83,22 +94,22 @@
     <div class="collection-toolbar">
       <div class="pill-group">
         <label class="pill-select">
-          <span>Sort by</span>
-          <select data-sort aria-label="Sort products">
-            <option value="featured">Featured</option>
-            <option value="price-asc">Price: low to high</option>
-            <option value="price-desc">Price: high to low</option>
-            <option value="name">Alphabetical</option>
+          <span data-i18n="sort.label">Sort by</span>
+          <select data-sort aria-label="Sort products" data-i18n-attr="aria-label:sort.aria">
+            <option value="featured" data-i18n="sort.featured">Featured</option>
+            <option value="price-asc" data-i18n="sort.priceAsc">Price: low to high</option>
+            <option value="price-desc" data-i18n="sort.priceDesc">Price: high to low</option>
+            <option value="name" data-i18n="sort.name">Alphabetical</option>
           </select>
         </label>
-        <button class="pill-btn" type="button" data-refine-toggle aria-expanded="false" aria-controls="refine-panel">Refine</button>
+        <button class="pill-btn" type="button" data-refine-toggle aria-expanded="false" aria-controls="refine-panel" data-i18n="refine">Refine</button>
       </div>
       <p class="collection-count" data-count aria-live="polite"></p>
-      <div class="pill-group density" role="group" aria-label="Grid density">
-        <button type="button" data-density="2" aria-label="Large tiles">
+      <div class="pill-group density" role="group" aria-label="Grid density" data-i18n-attr="aria-label:aria.density">
+        <button type="button" data-density="2" aria-label="Large tiles" data-i18n-attr="aria-label:aria.large">
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
         </button>
-        <button type="button" data-density="3" class="is-active" aria-label="Small tiles">
+        <button type="button" data-density="3" class="is-active" aria-label="Small tiles" data-i18n-attr="aria-label:aria.small">
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="3.5" height="3.5"/><rect x="6.25" y="1" width="3.5" height="3.5"/><rect x="11.5" y="1" width="3.5" height="3.5"/><rect x="1" y="6.25" width="3.5" height="3.5"/><rect x="6.25" y="6.25" width="3.5" height="3.5"/><rect x="11.5" y="6.25" width="3.5" height="3.5"/><rect x="1" y="11.5" width="3.5" height="3.5"/><rect x="6.25" y="11.5" width="3.5" height="3.5"/><rect x="11.5" y="11.5" width="3.5" height="3.5"/></svg>
         </button>
       </div>
@@ -106,106 +117,106 @@
 
     <div class="refine-panel" id="refine-panel" hidden>
       <fieldset>
-        <legend>Category</legend>
+        <legend data-i18n="filter.legend">Category</legend>
         <div class="chip-row" data-filters></div>
       </fieldset>
     </div>
 
-    <section class="product-grid" data-grid data-density="3" aria-label="Products">
-      <p class="grid-status">Loading products…</p>
+    <section class="product-grid" data-grid data-density="3" aria-label="Products" data-i18n-attr="aria-label:aria.products">
+      <p class="grid-status" data-i18n="grid.loading">Loading products…</p>
     </section>
 
     <section class="collection-info" aria-labelledby="collection-title">
       <div class="intro-box">
-        <h2 id="collection-title">YANIAER Skincare</h2>
-        <p class="intro-box__sub">Japanese clinic-grade luxury, made for home.</p>
-        <p>YANIAER carries forward the aesthetics of Japanese clinic-grade luxury care. We hold ourselves to high-end skincare standards, select skin-friendly active extracts, and pair them with dedicated mask materials and custom formulations — turning treatments once reserved for the salon into a luxurious experience you can enjoy at home.</p>
+        <h2 id="collection-title" data-i18n="intro.title">YANIAER Skincare</h2>
+        <p class="intro-box__sub" data-i18n="intro.sub">Japanese clinic-grade luxury, made for home.</p>
+        <p data-i18n="intro.body">YANIAER carries forward the aesthetics of Japanese clinic-grade luxury care. We hold ourselves to high-end skincare standards, select skin-friendly active extracts, and pair them with dedicated mask materials and custom formulations — turning treatments once reserved for the salon into a luxurious experience you can enjoy at home.</p>
       </div>
 
       <div class="category-cards">
         <article class="category-card">
-          <h3>Mask Rituals</h3>
-          <p>Facial Sheet Mask to brighten and firm, Hydrating Peel-Off Mask to clarify pores.</p>
+          <h3 data-i18n="card1.title">Mask Rituals</h3>
+          <p data-i18n="card1.body">Facial Sheet Mask to brighten and firm, Hydrating Peel-Off Mask to clarify pores.</p>
         </article>
         <article class="category-card">
-          <h3>Eye Care</h3>
-          <p>Golden firming Eye Patches for fine lines and dullness around the eyes, 60 patches per jar.</p>
+          <h3 data-i18n="nav.eye">Eye Care</h3>
+          <p data-i18n="card2.body">Golden firming Eye Patches for fine lines and dullness around the eyes, 60 patches per jar.</p>
         </article>
         <article class="category-card">
-          <h3>Clinic-Grade at Home</h3>
-          <p>Dedicated mask materials and custom formulations bring salon-level care into your own ritual.</p>
+          <h3 data-i18n="card3.title">Clinic-Grade at Home</h3>
+          <p data-i18n="card3.body">Dedicated mask materials and custom formulations bring salon-level care into your own ritual.</p>
         </article>
         <article class="category-card">
-          <h3>Signature Design</h3>
-          <p>Sapphire blue and champagne gold, finished with care down to the smallest line.</p>
+          <h3 data-i18n="card4.title">Signature Design</h3>
+          <p data-i18n="card4.body">Sapphire blue and champagne gold, finished with care down to the smallest line.</p>
         </article>
       </div>
 
       <div class="faq" id="faq">
-        <h2>Frequently Asked Questions</h2>
+        <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
         <details>
-          <summary>Which products are available?</summary>
-          <p>Facial Sheet Mask (25 sheets), Eye Patches (60 patches) and Hydrating Peel-Off Mask (150 mL) are all available to order today.</p>
+          <summary data-i18n="faq.q1">Which products are available?</summary>
+          <p data-i18n="faq.a1">Facial Sheet Mask (25 sheets), Eye Patches (60 patches) and Hydrating Peel-Off Mask (150 mL) are all available to order today.</p>
         </details>
         <details>
-          <summary>How do I use the Facial Sheet Mask?</summary>
-          <p>After cleansing, unfold the crystal sheet and smooth it over your face so it sits closely against the skin. Leave on for 15–20 minutes, remove, then gently pat in any remaining essence. Each sheet is for single use.</p>
+          <summary data-i18n="faq.q2">How do I use the Facial Sheet Mask?</summary>
+          <p data-i18n="faq.a2">After cleansing, unfold the crystal sheet and smooth it over your face so it sits closely against the skin. Leave on for 15–20 minutes, remove, then gently pat in any remaining essence. Each sheet is for single use.</p>
         </details>
         <details>
-          <summary>How do I use the Hydrating Peel-Off Mask?</summary>
-          <p>Apply an even layer to clean, dry skin, avoiding the eyes, brows and lips. Wait for it to set into a film, then gently peel it away to lift blackheads and dull surface build-up. Follow with the rest of your routine — skin is ready to absorb it.</p>
+          <summary data-i18n="faq.q3">How do I use the Hydrating Peel-Off Mask?</summary>
+          <p data-i18n="faq.a3">Apply an even layer to clean, dry skin, avoiding the eyes, brows and lips. Wait for it to set into a film, then gently peel it away to lift blackheads and dull surface build-up. Follow with the rest of your routine — skin is ready to absorb it.</p>
         </details>
         <details>
-          <summary>How do I use the Eye Patches?</summary>
-          <p>Take one patch for each eye from the jar and place it on clean skin around the eye area. Use daily as part of your routine to help smooth fine lines and keep the eye area looking firm and youthful.</p>
+          <summary data-i18n="faq.q4">How do I use the Eye Patches?</summary>
+          <p data-i18n="faq.a4">Take one patch for each eye from the jar and place it on clean skin around the eye area. Use daily as part of your routine to help smooth fine lines and keep the eye area looking firm and youthful.</p>
         </details>
         <details>
-          <summary>Are the products suitable for sensitive skin?</summary>
-          <p>Please check the full ingredient list on each pack and patch-test any new product on a small area first, especially if your skin is reactive.</p>
+          <summary data-i18n="faq.q5">Are the products suitable for sensitive skin?</summary>
+          <p data-i18n="faq.a5">Please check the full ingredient list on each pack and patch-test any new product on a small area first, especially if your skin is reactive.</p>
         </details>
       </div>
 
       <div class="trust-box">
-        <p><strong>Japanese clinic-grade aesthetics:</strong> a luxury care philosophy shaped by the treatment salon.</p>
-        <p><strong>Skin-friendly active extracts:</strong> carefully selected and held to high-end skincare standards.</p>
-        <p><strong>Luxury, made for home:</strong> anti-ageing, brightening and clarifying care in your own ritual.</p>
+        <p data-i18n="trust1"><strong>Japanese clinic-grade aesthetics:</strong> a luxury care philosophy shaped by the treatment salon.</p>
+        <p data-i18n="trust2"><strong>Skin-friendly active extracts:</strong> carefully selected and held to high-end skincare standards.</p>
+        <p data-i18n="trust3"><strong>Luxury, made for home:</strong> anti-ageing, brightening and clarifying care in your own ritual.</p>
       </div>
     </section>
 
     <section class="story" id="story" aria-labelledby="story-title">
       <div class="story__media">
-        <img src="assets/img/02-eye-patches-detail.webp" alt="YANIAER Eye Patches jar and box with golden patches in a marble colonnade" width="900" height="900" loading="lazy" decoding="async">
+        <img src="assets/img/02-eye-patches-detail.webp" alt="YANIAER Eye Patches jar and box with golden patches in a marble colonnade" data-i18n-attr="alt:story.alt" width="900" height="900" loading="lazy" decoding="async">
       </div>
       <div class="story__copy">
-        <p class="eyebrow">Our Story</p>
-        <h2 id="story-title">Clinic-grade luxury, brought home</h2>
-        <p>YANIAER is built on the aesthetics of Japanese clinic-grade luxury care. Our belief is simple: crystal-infused care, for luxuriously youthful skin.</p>
-        <p>We select skin-friendly active extracts and pair them with dedicated mask materials and custom formulations, so that the anti-ageing, brightening and clarifying treatments of the salon become a luxurious ritual you can enjoy at home — for anyone who seeks a higher standard of skincare.</p>
+        <p class="eyebrow" data-i18n="nav.story">Our Story</p>
+        <h2 id="story-title" data-i18n="story.title">Clinic-grade luxury, brought home</h2>
+        <p data-i18n="story.p1">YANIAER is built on the aesthetics of Japanese clinic-grade luxury care. Our belief is simple: crystal-infused care, for luxuriously youthful skin.</p>
+        <p data-i18n="story.p2">We select skin-friendly active extracts and pair them with dedicated mask materials and custom formulations, so that the anti-ageing, brightening and clarifying treatments of the salon become a luxurious ritual you can enjoy at home — for anyone who seeks a higher standard of skincare.</p>
       </div>
     </section>
 
     <section class="reviews" aria-labelledby="reviews-title">
-      <h2 id="reviews-title">Loved in Everyday Rituals</h2>
+      <h2 id="reviews-title" data-i18n="reviews.title">Loved in Everyday Rituals</h2>
       <div class="reviews__track">
         <figure class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>The crystal sheet sits so closely on my face — my skin looks brighter straight away.</blockquote>
-          <figcaption>Facial Sheet Mask</figcaption>
+          <div class="stars" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria.stars5">★★★★★</div>
+          <blockquote data-i18n="review1">The crystal sheet sits so closely on my face — my skin looks brighter straight away.</blockquote>
+          <figcaption data-i18n="prod.sheet">Facial Sheet Mask</figcaption>
         </figure>
         <figure class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>Part of my daily routine now. The golden patches feel lovely and stay put.</blockquote>
-          <figcaption>Eye Patches</figcaption>
+          <div class="stars" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria.stars5">★★★★★</div>
+          <blockquote data-i18n="review2">Part of my daily routine now. The golden patches feel lovely and stay put.</blockquote>
+          <figcaption data-i18n="prod.eye">Eye Patches</figcaption>
         </figure>
         <figure class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>Peeling it off is oddly satisfying, and my skin feels so clear and fresh after.</blockquote>
-          <figcaption>Hydrating Peel-Off Mask</figcaption>
+          <div class="stars" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria.stars5">★★★★★</div>
+          <blockquote data-i18n="review3">Peeling it off is oddly satisfying, and my skin feels so clear and fresh after.</blockquote>
+          <figcaption data-i18n="prod.peel">Hydrating Peel-Off Mask</figcaption>
         </figure>
         <figure class="review">
-          <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
-          <blockquote>The packaging is beautiful — it looks lovely on my vanity and makes a great gift.</blockquote>
-          <figcaption>Facial Sheet Mask</figcaption>
+          <div class="stars" aria-label="4 out of 5 stars" data-i18n-attr="aria-label:aria.stars4">★★★★☆</div>
+          <blockquote data-i18n="review4">The packaging is beautiful — it looks lovely on my vanity and makes a great gift.</blockquote>
+          <figcaption data-i18n="prod.sheet">Facial Sheet Mask</figcaption>
         </figure>
       </div>
     </section>
@@ -215,36 +226,39 @@
     <div class="site-footer__top">
       <div class="footer-brand">
         <a class="wordmark wordmark--light" href="#top">YANIAER</a>
-        <p>Japanese clinic-grade luxury skincare. Crystal-infused, luxuriously youthful.</p>
+        <p data-i18n="footer.tagline">Japanese clinic-grade luxury skincare. Crystal-infused, luxuriously youthful.</p>
         <form class="newsletter" data-newsletter novalidate>
-          <label for="nl-email">Be the first to know about new launches</label>
+          <label for="nl-email" data-i18n="nl.label">Be the first to know about new launches</label>
           <div class="newsletter__row">
             <input id="nl-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-            <button class="btn btn--gold" type="submit">Sign up</button>
+            <button class="btn btn--gold" type="submit" data-i18n="nl.submit">Sign up</button>
           </div>
           <p class="newsletter__msg" data-newsletter-msg aria-live="polite"></p>
         </form>
       </div>
-      <nav class="footer-col" aria-label="Shop">
-        <h3>Shop</h3>
-        <a href="#main" data-nav-category="All">Shop All</a><a href="#main" data-nav-category="Masks">Masks</a><a href="#main" data-nav-category="Eye Care">Eye Care</a>
+      <nav class="footer-col" aria-label="Shop" data-i18n-attr="aria-label:footer.shop">
+        <h3 data-i18n="footer.shop">Shop</h3>
+        <a href="#main" data-nav-category="All" data-i18n="nav.all">Shop All</a><a href="#main" data-nav-category="Masks" data-i18n="nav.masks">Masks</a><a href="#main" data-nav-category="Eye Care" data-i18n="nav.eye">Eye Care</a>
       </nav>
-      <nav class="footer-col" aria-label="About">
-        <h3>About</h3>
-        <a href="#story">Our Story</a><a href="#faq">FAQ</a>
+      <nav class="footer-col" aria-label="About" data-i18n-attr="aria-label:footer.about">
+        <h3 data-i18n="footer.about">About</h3>
+        <a href="#story" data-i18n="nav.story">Our Story</a><a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
-      <nav class="footer-col" aria-label="Help">
-        <h3>Help</h3>
-        <a href="#">Contact Us</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Terms</a><a href="#">Privacy</a>
+      <nav class="footer-col" aria-label="Help" data-i18n-attr="aria-label:footer.help">
+        <h3 data-i18n="footer.help">Help</h3>
+        <a href="#" data-i18n="help.contact">Contact Us</a><a href="#" data-i18n="help.shipping">Shipping</a><a href="#" data-i18n="help.returns">Returns</a><a href="#" data-i18n="help.terms">Terms</a><a href="#" data-i18n="help.privacy">Privacy</a>
       </nav>
     </div>
     <div class="site-footer__bottom">
-      <p class="legal">© <span data-year></span> YANIAER. All rights reserved.</p>
+      <p class="legal">© <span data-year></span> YANIAER. <span data-i18n="legal">All rights reserved.</span></p>
     </div>
   </footer>
 
   <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
 
+  <script src="assets/js/i18n/zh-hant.js" defer></script>
+  <script src="assets/js/i18n/vi.js" defer></script>
+  <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

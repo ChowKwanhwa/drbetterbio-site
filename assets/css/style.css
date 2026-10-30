@@ -18,6 +18,11 @@
   --radius: 4px;
 }
 
+html:lang(zh-Hant) {
+  --serif: Georgia, "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+  --sans: "Helvetica Neue", Arial, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -45,13 +50,32 @@ button, input, select { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 /* ---------- Utility bar ---------- */
-.utility-bar { background: var(--utility); font-size: 12px; }
+.utility-bar { position: relative; z-index: 60; background: var(--utility); font-size: 12px; }
 .utility-bar__inner {
   max-width: var(--max); margin: 0 auto; padding: 8px var(--gutter);
   display: flex; justify-content: flex-end; align-items: center; gap: 14px;
 }
 .utility-bar a { text-decoration: none; display: inline-flex; }
 .utility-bar__sep { width: 1px; height: 18px; background: var(--ink); opacity: .5; }
+
+.lang-switch { position: relative; }
+.lang-switch__btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; border: 0; padding: 2px 0; cursor: pointer; font-size: 12px;
+}
+.lang-switch__menu {
+  position: absolute; top: calc(100% + 8px); right: 0; min-width: 140px;
+  margin: 0; padding: 6px 0; list-style: none;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(19, 35, 74, .12);
+}
+.lang-switch__menu[hidden] { display: none; }
+.lang-switch__menu button {
+  display: block; width: 100%; padding: 9px 16px; text-align: left;
+  background: none; border: 0; cursor: pointer; font-size: 13px; white-space: nowrap;
+}
+.lang-switch__menu button:hover { background: var(--cream); }
+.lang-switch__menu button[aria-current="true"] { color: var(--gold); font-weight: 700; }
 
 /* ---------- Header ---------- */
 .site-header {

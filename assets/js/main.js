@@ -15,6 +15,7 @@
   const countEl = $('[data-count]');
   const cartCountEl = $('[data-cart-count]');
   const toastEl = $('[data-toast]');
+  const { t } = window.I18N;
 
   const state = { products: [], sort: 'featured', category: ALL, cart: 0 };
 
@@ -35,12 +36,15 @@
     featured: () => 0,
     'price-asc': byPrice(1),
     'price-desc': byPrice(-1),
-    name: (a, b) => a.name.localeCompare(b.name)
+    name: (a, b) => a.name.localeCompare(b.name, window.I18N.lang)
   };
+
+  // Overlay the current language's name/size/desc/badge onto the English record.
+  const localize = (p) => ({ ...p, ...((p.i18n && p.i18n[window.I18N.lang]) || {}) });
 
   function visibleProducts({ products, sort, category }) {
     const filtered = category === ALL ? products : products.filter((p) => p.category === category);
-    return [...filtered].sort(SORTERS[sort] || SORTERS.featured);
+    return filtered.map(localize).sort(SORTERS[sort] || SORTERS.featured);
   }
 
   function cardHtml(p) {
@@ -55,10 +59,10 @@
       : '';
     const price = available
       ? `<p class="product-card__price">${money(p.price)}</p>`
-      : '<p class="product-card__price product-card__price--soon">Arriving soon</p>';
+      : `<p class="product-card__price product-card__price--soon">${escapeHtml(t('ui.arrivingSoon'))}</p>`;
     const action = available
-      ? `<button class="add-btn" type="button" data-add="${id}">Add to Bag</button>`
-      : '<button class="add-btn" type="button" disabled>Coming Soon</button>';
+      ? `<button class="add-btn" type="button" data-add="${id}">${escapeHtml(t('ui.addToBag'))}</button>`
+      : `<button class="add-btn" type="button" disabled>${escapeHtml(t('ui.comingSoon'))}</button>`;
     return `
       <article class="product-card${available ? '' : ' is-soon'}" id="${id}">
         <a class="product-card__media" href="#${id}" aria-label="${name}">
@@ -66,7 +70,7 @@
           ${detail}
           ${badge}
         </a>
-        <p class="product-card__no">No. ${escapeHtml(p.no)}</p>
+        <p class="product-card__no">${escapeHtml(t('ui.no', { no: p.no }))}</p>
         <h2 class="product-card__title"><a href="#${id}">${name}</a></h2>
         <p class="product-card__size">${escapeHtml(p.size)}</p>
         <p class="product-card__desc">${escapeHtml(p.desc)}</p>
@@ -79,14 +83,14 @@
     const items = visibleProducts(state);
     grid.innerHTML = items.length
       ? items.map(cardHtml).join('')
-      : '<p class="grid-status">No products match this filter.</p>';
-    countEl.textContent = `${items.length} product${items.length === 1 ? '' : 's'}`;
+      : `<p class="grid-status">${escapeHtml(t('ui.noMatch'))}</p>`;
+    countEl.textContent = t(items.length === 1 ? 'ui.count.one' : 'ui.count.other', { n: items.length });
   }
 
   function renderFilters() {
     const categories = [ALL, ...new Set(state.products.map((p) => p.category))];
     filterRow.innerHTML = categories.map((c) =>
-      `<button type="button" class="chip" data-category="${escapeHtml(c)}" aria-pressed="${c === state.category}">${escapeHtml(c)}</button>`
+      `<button type="button" class="chip" data-category="${escapeHtml(c)}" aria-pressed="${c === state.category}">${escapeHtml(c === ALL ? t('ui.all') : t(`cat.${c}`))}</button>`
     ).join('');
   }
 
@@ -110,19 +114,20 @@
   }
 
   function addToCart(id, button) {
-    const product = state.products.find((p) => p.id === id);
+    const found = state.products.find((p) => p.id === id);
+    const product = found && localize(found);
     if (!product || !isAvailable(product)) return;
     state.cart += 1;
     cartCountEl.textContent = String(state.cart);
     cartCountEl.hidden = false;
     const original = button.innerHTML;
     button.classList.add('is-added');
-    button.textContent = 'Added ✓';
+    button.textContent = t('ui.added');
     setTimeout(() => {
       button.classList.remove('is-added');
       button.innerHTML = original;
     }, 1600);
-    showToast(`${product.name} added to your bag`);
+    showToast(t('ui.toastAdded', { name: product.name }));
   }
 
   function bindEvents() {
@@ -178,10 +183,10 @@
       e.preventDefault();
       const email = form.email.value.trim();
       if (!EMAIL_RE.test(email)) {
-        msg.textContent = 'Please enter a valid email address.';
+        msg.textContent = t('ui.nlInvalid');
         return;
       }
-      msg.textContent = 'Thanks! Check your inbox for your welcome code.';
+      msg.textContent = t('ui.nlThanks');
       form.reset();
     });
   }
@@ -189,6 +194,11 @@
   async function init() {
     $('[data-year]').textContent = String(new Date().getFullYear());
     bindEvents();
+    window.I18N.onChange(() => {
+      if (!state.products.length) return;
+      renderFilters();
+      render();
+    });
     try {
       const res = await fetch(DATA_URL);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -199,7 +209,7 @@
       render();
     } catch (err) {
       console.error('Failed to load products:', err);
-      grid.innerHTML = '<p class="grid-status">Products are unavailable right now. Please refresh the page.</p>';
+      grid.innerHTML = `<p class="grid-status">${escapeHtml(t('ui.unavailable'))}</p>`;
     }
   }
 

@@ -110,7 +110,7 @@ button, input, select { font: inherit; color: inherit; }
   max-width: var(--max); margin: 0 auto;
   display: grid; grid-template-columns: 1fr; background: var(--cream);
 }
-.hero__media img { display: block; width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.hero__media img { display: block; width: 100%; height: auto; object-fit: cover; }
 .hero__copy { padding: 28px var(--gutter) 36px; }
 .hero__copy h1 {
   font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.15;
@@ -196,20 +196,20 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
 .product-card { display: flex; flex-direction: column; text-align: center; }
 .product-card__media {
-  position: relative; display: block; aspect-ratio: 1 / 1; background: var(--white);
+  position: relative; display: block; height: 0; padding-bottom: 100%; background: var(--white);
   overflow: hidden;
 }
 .product-card__media img {
-  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
   transition: transform .5s ease, opacity .4s ease;
 }
-.product-card__media .product-card__alt { position: absolute; inset: 0; opacity: 0; }
+.product-card__media .product-card__alt { opacity: 0; }
 .product-card:hover .product-card__media img,
 .product-card__media:focus-visible img { transform: scale(1.04); }
 .product-card:hover .product-card__alt,
 .product-card__media:focus-visible .product-card__alt { opacity: 1; }
 .badge {
-  position: absolute; top: 8px; left: 8px;
+  position: absolute; top: 8px; left: 8px; z-index: 1;
   background: var(--cream); color: var(--gold); border: 1px solid var(--gold-soft);
   font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
   padding: 4px 8px;
@@ -292,7 +292,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center;
   padding: 16px 0 56px;
 }
-.story__media img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
+.story__media img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .story__copy h2 { font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0 0 14px; }
 .story__copy p:not(.eyebrow) { color: var(--muted); font-size: 14.5px; }
 
@@ -357,6 +357,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
   .category-cards { grid-template-columns: 1fr 1fr; }
   .hero { grid-template-columns: 1fr 1fr; align-items: center; }
+  .hero__media img { height: 100%; }
   .hero__copy { padding: 40px; }
   .hero__copy h1 { font-size: 40px; }
   .story { grid-template-columns: 1fr 1fr; gap: 48px; }

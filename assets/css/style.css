@@ -79,11 +79,10 @@ button, input, select { font: inherit; color: inherit; }
 }
 
 .wordmark {
-  font-family: var(--sans); font-size: 28px; letter-spacing: -.3px;
+  font-family: var(--serif); font-size: 26px; letter-spacing: .12em; text-transform: uppercase;
   text-decoration: none; color: var(--navy); white-space: nowrap;
 }
-.wordmark span { color: var(--gold); }
-.wordmark--light { color: var(--white); }
+.wordmark--light { color: var(--gold-soft); }
 
 .region {
   display: none; background: none; border: 0; color: var(--muted);
@@ -370,8 +369,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 @media (min-width: 1024px) {
   :root { --gutter: 48px; }
   .site-header__bar { padding-top: 28px; padding-bottom: 24px; }
-  .wordmark { font-size: 40px; }
-  .wordmark--light { font-size: 32px; }
+  .wordmark { font-size: 36px; }
+  .wordmark--light { font-size: 30px; }
   .menu-toggle { display: none; }
   .region { display: inline-flex; }
   .primary-nav {

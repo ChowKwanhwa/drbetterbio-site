@@ -1,6 +1,6 @@
-# Dr.BetterBio — Skincare Collection
+# YANIAER — Skincare Collection
 
-Static product collection page for Dr.BetterBio, Hong Kong-born skincare.
+Static product collection page for YANIAER, Japanese clinic-grade luxury skincare.
 
 - `index.html` — page markup (hero, collection grid, brand intro, FAQ, story, reviews)
 - `assets/css/style.css` — styles (mobile-first, 2 / 3-column grid)
@@ -12,15 +12,12 @@ Static product collection page for Dr.BetterBio, Hong Kong-born skincare.
 
 | No. | Product | Size | Price |
 |---|---|---|---|
-| 01 | Facial Sheet Mask | 10 sheets | USD 25.00 |
-| 02 | Eye Patches | 40 patches | USD 15.00 |
+| 01 | Facial Sheet Mask | 25 sheets | USD 25.00 |
+| 02 | Eye Patches | 60 patches | USD 20.00 |
 | 03 | Hydrating Peel-Off Mask | 150 mL | USD 30.00 |
-| 04 | Face Cream | 40 g | Coming Soon |
-| 05 | Gentle Facial Cleanser | 120 g | Coming Soon |
-| 06 | Facial Serum | 60 mL | Coming Soon |
 
-Products with `"status": "coming-soon"` and `"price": null` hide the price and cannot be added to the bag.
-To launch one, set `status` to `"available"`, give it a `price`, and clear or change its `badge`.
+A product with `"status": "coming-soon"` and `"price": null` hides its price and cannot be added to the bag.
+To launch it, set `status` to `"available"`, give it a `price`, and clear or change its `badge`.
 
 Run locally:
 

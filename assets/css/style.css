@@ -22,6 +22,14 @@ html:lang(zh-Hant) {
   --serif: Georgia, "Songti TC", "Noto Serif TC", "PMingLiU", serif;
   --sans: "Helvetica Neue", Arial, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
+html:lang(ja) {
+  --serif: Georgia, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  --sans: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+html:lang(ko) {
+  --serif: Georgia, "AppleMyungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+  --sans: "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+}
 
 *,
 *::before,
@@ -247,7 +255,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   font-family: var(--serif); font-weight: 700; font-size: 15px; line-height: 1.3;
   margin: 0 0 4px;
 }
-.product-card__size { margin: 0 0 8px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.product-card__size { margin: 0 0 8px; font-size: 11.5px; letter-spacing: .06em; color: var(--muted); }
 .product-card__title a { text-decoration: none; }
 .product-card__desc { margin: 0 0 12px; font-size: 12px; color: var(--muted); }
 .product-card__price { margin: auto 0 10px; font-size: 14px; letter-spacing: .04em; }
@@ -365,6 +373,12 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
   display: flex; flex-direction: column; gap: 14px;
 }
 .legal { margin: 0; font-size: 11px; opacity: .75; }
+
+.payment-icons {
+  max-width: var(--max); margin: 0 auto; padding: 4px var(--gutter) 24px;
+  list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.payment-icons img { display: block; width: 38px; height: 24px; }
 
 /* ---------- Toast ---------- */
 .toast {

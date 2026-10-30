@@ -1,4 +1,4 @@
-// Page language switching. English lives in the HTML markup; other
+// Page language switching (EN / 繁中 / VI / 日本語 / 한국어). English lives in the HTML markup; other
 // languages come from assets/js/i18n/*.js (window.YANIAER_LOCALES).
 (() => {
   'use strict';
@@ -8,7 +8,9 @@
   const LANGS = Object.freeze([
     { code: 'en', short: 'EN', label: 'English' },
     { code: 'zh-Hant', short: '繁', label: '繁體中文' },
-    { code: 'vi', short: 'VI', label: 'Tiếng Việt' }
+    { code: 'vi', short: 'VI', label: 'Tiếng Việt' },
+    { code: 'ja', short: '日', label: '日本語' },
+    { code: 'ko', short: '한', label: '한국어' }
   ]);
 
   // Strings built in JavaScript (the markup has no English copy of these).
@@ -17,6 +19,9 @@
     'ui.all': 'All',
     'cat.Masks': 'Masks',
     'cat.Eye Care': 'Eye Care',
+    'cat.Moisturizers': 'Moisturizers',
+    'cat.Cleansers': 'Cleansers',
+    'cat.Serums': 'Serums',
     'ui.addToBag': 'Add to Bag',
     'ui.added': 'Added ✓',
     'ui.comingSoon': 'Coming Soon',
@@ -49,6 +54,8 @@
     const browser = (navigator.language || '').toLowerCase();
     if (browser.startsWith('zh')) return 'zh-Hant';
     if (browser.startsWith('vi')) return 'vi';
+    if (browser.startsWith('ja')) return 'ja';
+    if (browser.startsWith('ko')) return 'ko';
     return DEFAULT_LANG;
   }
 

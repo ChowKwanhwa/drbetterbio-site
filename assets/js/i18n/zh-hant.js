@@ -55,7 +55,7 @@ window.YANIAER_LOCALES = Object.assign({}, window.YANIAER_LOCALES, {
 
     'faq.title': '常見問題',
     'faq.q1': '目前有哪些商品？',
-    'faq.a1': '水晶面膜（25 片）、金色緊緻眼膜貼（60 片）與淨透撕拉面膜（150 mL）現已全部開放訂購。',
+    'faq.a1': '水晶面膜（10 片）、金色緊緻眼膜貼（60 片）與淨透撕拉面膜（150 mL）現已開放訂購；面霜、溫和潔面乳與精華液即將推出。',
     'faq.q2': '水晶面膜怎麼使用？',
     'faq.a2': '潔面後展開晶透膜片，敷於臉部使其緊密貼合肌膚。靜敷 15–20 分鐘後取下，再輕拍剩餘精華至吸收。單片單次使用。',
     'faq.q3': '淨透撕拉面膜怎麼使用？',
@@ -97,10 +97,14 @@ window.YANIAER_LOCALES = Object.assign({}, window.YANIAER_LOCALES, {
     'help.terms': '條款',
     'help.privacy': '隱私權',
     'legal': '版權所有。',
+    'aria.payments': '付款方式',
 
     'ui.all': '全部',
     'cat.Masks': '面膜',
     'cat.Eye Care': '眼部護理',
+    'cat.Moisturizers': '保濕',
+    'cat.Cleansers': '潔面',
+    'cat.Serums': '精華',
     'ui.addToBag': '加入購物袋',
     'ui.added': '已加入 ✓',
     'ui.comingSoon': '即將推出',

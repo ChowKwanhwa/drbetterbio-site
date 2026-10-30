@@ -55,7 +55,7 @@ window.YANIAER_LOCALES = Object.assign({}, window.YANIAER_LOCALES, {
 
     'faq.title': 'Câu hỏi thường gặp',
     'faq.q1': 'Hiện có những sản phẩm nào?',
-    'faq.a1': 'Mặt nạ pha lê (25 miếng), Mặt nạ mắt (60 miếng) và Mặt nạ lột (150 mL) đều đã có thể đặt mua ngay hôm nay.',
+    'faq.a1': 'Mặt nạ pha lê (10 miếng), Mặt nạ mắt (60 miếng) và Mặt nạ lột (150 mL) đã có thể đặt mua ngay hôm nay. Kem dưỡng da mặt, Sữa rửa mặt dịu nhẹ và Tinh chất dưỡng da sắp ra mắt.',
     'faq.q2': 'Cách dùng Mặt nạ pha lê?',
     'faq.a2': 'Sau khi rửa mặt, mở miếng mặt nạ pha lê và đắp lên mặt sao cho ôm sát da. Giữ trong 15–20 phút, gỡ ra rồi vỗ nhẹ phần tinh chất còn lại cho thẩm thấu. Mỗi miếng chỉ dùng một lần.',
     'faq.q3': 'Cách dùng Mặt nạ lột?',
@@ -97,10 +97,14 @@ window.YANIAER_LOCALES = Object.assign({}, window.YANIAER_LOCALES, {
     'help.terms': 'Điều khoản',
     'help.privacy': 'Quyền riêng tư',
     'legal': 'Bảo lưu mọi quyền.',
+    'aria.payments': 'Phương thức thanh toán',
 
     'ui.all': 'Tất cả',
     'cat.Masks': 'Mặt nạ',
     'cat.Eye Care': 'Chăm sóc mắt',
+    'cat.Moisturizers': 'Dưỡng ẩm',
+    'cat.Cleansers': 'Sữa rửa mặt',
+    'cat.Serums': 'Tinh chất',
     'ui.addToBag': 'Thêm vào giỏ',
     'ui.added': 'Đã thêm ✓',
     'ui.comingSoon': 'Sắp ra mắt',

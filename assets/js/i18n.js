@@ -1,4 +1,4 @@
-// Page language switching (EN / 繁中 / VI / 日本語 / 한국어). English lives in the HTML markup; other
+// Page language switching (日本語 / EN / 한국어 / VI / 繁中). English lives in the HTML markup; other
 // languages come from assets/js/i18n/*.js (window.YANIAER_LOCALES).
 (() => {
   'use strict';
@@ -6,11 +6,11 @@
   const STORAGE_KEY = 'yaniaer-lang';
   const DEFAULT_LANG = 'en';
   const LANGS = Object.freeze([
-    { code: 'en', short: 'EN', label: 'English' },
-    { code: 'zh-Hant', short: '繁', label: '繁體中文' },
-    { code: 'vi', short: 'VI', label: 'Tiếng Việt' },
     { code: 'ja', short: '日', label: '日本語' },
-    { code: 'ko', short: '한', label: '한국어' }
+    { code: 'en', short: 'EN', label: 'English' },
+    { code: 'ko', short: '한', label: '한국어' },
+    { code: 'vi', short: 'VI', label: 'Tiếng Việt' },
+    { code: 'zh-Hant', short: '繁', label: '繁體中文' }
   ]);
 
   // Strings built in JavaScript (the markup has no English copy of these).

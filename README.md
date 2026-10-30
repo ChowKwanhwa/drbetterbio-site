@@ -5,7 +5,7 @@ Static product collection page for YANIAER, Japanese clinic-grade luxury skincar
 - `index.html` — page markup (hero, collection grid, brand intro, FAQ, story, reviews)
 - `assets/css/style.css` — styles (mobile-first, 2 / 3-column grid)
 - `assets/js/main.js` — sorting, category filter (refine chips + nav links), grid density, add-to-bag feedback, newsletter validation
-- `assets/js/i18n.js` — language switcher (English / 繁體中文 / Tiếng Việt / 日本語 / 한국어); picks `?lang=`, then the saved choice, then the browser language
+- `assets/js/i18n.js` — language switcher (日本語 / English / 한국어 / Tiếng Việt / 繁體中文); picks `?lang=`, then the saved choice, then the browser language
 - `assets/js/i18n/*.js` — Traditional Chinese, Vietnamese, Japanese and Korean strings (English is the markup itself)
 - `assets/data/products.json` — product catalogue
 - `assets/img/payments/` — footer payment badges (SVG, from activemerchant/payment_icons, MIT)
